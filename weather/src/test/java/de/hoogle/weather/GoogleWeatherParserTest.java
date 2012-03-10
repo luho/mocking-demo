@@ -20,27 +20,27 @@ public class GoogleWeatherParserTest {
 	public void testDate() throws IOException, ParseException {
 		Date expected = new SimpleDateFormat("yyyy-MM-dd").parse("2012-03-10");
 		String goodInput = readInput("/goodinput.xml");
-		parser = new GoogleWeatherParser(goodInput);
+		parser = new GoogleWeatherParser();
 		
-		Forecast forecast = parser.parse();
+		Forecast forecast = parser.parse(goodInput);
 		assertEquals(expected, forecast.getDate());
 	}
 
 	@Test
 	public void testNumberOfDays() throws IOException {
 		String goodInput = readInput("/goodinput.xml");
-		parser = new GoogleWeatherParser(goodInput);
+		parser = new GoogleWeatherParser();
 		
-		Forecast forecast = parser.parse();
+		Forecast forecast = parser.parse(goodInput);
 		assertEquals(4, forecast.getDays().size());
 	}
 
 	@Test
 	public void testSaturday() throws IOException {
 		String goodInput = readInput("/goodinput.xml");
-		parser = new GoogleWeatherParser(goodInput);
+		parser = new GoogleWeatherParser();
 		
-		Forecast forecast = parser.parse();
+		Forecast forecast = parser.parse(goodInput);
 		assertEquals("Sat", forecast.getDays().get(0).getDayOfWeek());
 		assertEquals(36, forecast.getDays().get(0).getLowTemp());
 		assertEquals(48, forecast.getDays().get(0).getHighTemp());
@@ -50,17 +50,17 @@ public class GoogleWeatherParserTest {
 	@Test(expected=de.hoogle.weather.ParseException.class)
 	public void testWrongDateFormat() throws IOException {
 		String wrongDateFormat = readInput("/wrongdateinput.xml");
-		parser = new GoogleWeatherParser(wrongDateFormat);
+		parser = new GoogleWeatherParser();
 		
-		parser.parse();		
+		parser.parse(wrongDateFormat);		
 	}
 	
 	@Test(expected=de.hoogle.weather.ParseException.class)
 	public void testBadInput() throws IOException {
 		String badInput = readInput("/badInput.xml");
-		parser = new GoogleWeatherParser(badInput);
+		parser = new GoogleWeatherParser();
 		
-		parser.parse();				
+		parser.parse(badInput);				
 	}
 	
 	private String readInput(String fileName) throws IOException {

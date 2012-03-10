@@ -14,18 +14,16 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
-public final class GoogleWeatherParser {
+public class GoogleWeatherParser {
 
-	private String xml;
 	private XPath xpath;
 	private Forecast forecast;
 	
-	public GoogleWeatherParser(String xml) {
-		this.xml = xml;
+	public GoogleWeatherParser() {
 		xpath = XPathFactory.newInstance().newXPath();
 	}
 	
-	public Forecast parse() {
+	public Forecast parse(String xml) {
 		try {
 			Node node = (Node) xpath.evaluate("/xml_api_reply/weather",
 					new InputSource(new ByteArrayInputStream(xml.getBytes("UTF-8"))),
