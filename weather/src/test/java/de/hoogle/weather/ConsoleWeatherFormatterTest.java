@@ -34,12 +34,12 @@ public class ConsoleWeatherFormatterTest {
 		ForecastDay day2 = new ForecastDay("Sun", 5, 15, "Cool and cloudy");
 		forecast.addDay(day1);
 		forecast.addDay(day2);
-		formatter = new ConsoleWeatherFormatter(forecast);
+		formatter = new ConsoleWeatherFormatter();
 	}
 	
 	@Test
 	public void testFormat() {
-		String pretty = formatter.format();
+		String pretty = formatter.format(forecast);
 		assertNotNull("formatter returned null", pretty);
 		assertEquals(expectedFormat, pretty);
 	}

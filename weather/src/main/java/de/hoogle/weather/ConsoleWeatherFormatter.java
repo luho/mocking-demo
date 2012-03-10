@@ -8,11 +8,8 @@ public class ConsoleWeatherFormatter implements WeatherFormatter {
 	private StringBuilder formatted;
 	private Forecast forecast;
 
-	public ConsoleWeatherFormatter(Forecast forecast) {
+	public String format(Forecast forecast) {
 		this.forecast = forecast;
-	}
-	
-	public String format() {
 		formatted = new StringBuilder();
 		formatFirstLine();
 		formatDays();

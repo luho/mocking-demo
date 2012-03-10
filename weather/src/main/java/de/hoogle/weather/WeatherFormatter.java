@@ -2,5 +2,5 @@ package de.hoogle.weather;
 
 public interface WeatherFormatter {
 
-	String format();
+	String format(Forecast forecast);
 }
