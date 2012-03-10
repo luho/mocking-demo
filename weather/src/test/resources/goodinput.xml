@@ -1,0 +1,50 @@
+<xml_api_reply version="1">
+	<weather module_id="0" tab_id="0" mobile_row="0" mobile_zipped="1"
+		row="0" section="0">
+		<forecast_information>
+			<city data="Munich, Bavaria" />
+			<postal_code data="München" />
+			<latitude_e6 data="" />
+			<longitude_e6 data="" />
+			<forecast_date data="2012-03-10" />
+			<current_date_time data="1970-01-01 00:00:00 +0000" />
+			<unit_system data="US" />
+		</forecast_information>
+		<current_conditions>
+			<condition data="Clear" />
+			<temp_f data="39" />
+			<temp_c data="4" />
+			<humidity data="Humidity: 75%" />
+			<icon data="/ig/images/weather/sunny.gif" />
+			<wind_condition data="Wind: SW at 5 mph" />
+		</current_conditions>
+		<forecast_conditions>
+			<day_of_week data="Sat" />
+			<low data="36" />
+			<high data="48" />
+			<icon data="/ig/images/weather/mostly_sunny.gif" />
+			<condition data="Partly Sunny" />
+		</forecast_conditions>
+		<forecast_conditions>
+			<day_of_week data="Sun" />
+			<low data="36" />
+			<high data="45" />
+			<icon data="/ig/images/weather/chance_of_rain.gif" />
+			<condition data="Chance of Rain" />
+		</forecast_conditions>
+		<forecast_conditions>
+			<day_of_week data="Mon" />
+			<low data="37" />
+			<high data="48" />
+			<icon data="/ig/images/weather/chance_of_rain.gif" />
+			<condition data="Chance of Rain" />
+		</forecast_conditions>
+		<forecast_conditions>
+			<day_of_week data="Tue" />
+			<low data="32" />
+			<high data="50" />
+			<icon data="/ig/images/weather/mostly_sunny.gif" />
+			<condition data="Mostly Sunny" />
+		</forecast_conditions>
+	</weather>
+</xml_api_reply>

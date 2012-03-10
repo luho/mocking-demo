@@ -1,5 +1,6 @@
 package de.hoogle.weather;
 
-public class WeatherService {
+public interface WeatherService {
 
+	Forecast getForecastForCity(String city);
 }
