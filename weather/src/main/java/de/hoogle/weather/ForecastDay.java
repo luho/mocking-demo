@@ -5,13 +5,13 @@ public class ForecastDay {
 	private String dayOfWeek;
 	private int lowTemp;
 	private int highTemp;
-	private String description;
+	private String condition;
 	
 	public ForecastDay(String dayOfWeek, int lowTemp, int highTemp, String description) {
 		this.dayOfWeek = dayOfWeek;
 		this.lowTemp = lowTemp;
 		this.highTemp = highTemp;
-		this.description = description;
+		this.condition = description;
 	}
 
 	public String getDayOfWeek() {
@@ -26,7 +26,7 @@ public class ForecastDay {
 		return highTemp;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getCondition() {
+		return condition;
 	}
 }

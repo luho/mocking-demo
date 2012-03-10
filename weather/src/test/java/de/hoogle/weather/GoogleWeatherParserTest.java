@@ -44,7 +44,7 @@ public class GoogleWeatherParserTest {
 		assertEquals("Sat", forecast.getDays().get(0).getDayOfWeek());
 		assertEquals(36, forecast.getDays().get(0).getLowTemp());
 		assertEquals(48, forecast.getDays().get(0).getHighTemp());
-		assertEquals("Partly Sunny", forecast.getDays().get(0).getDescription());		
+		assertEquals("Partly Sunny", forecast.getDays().get(0).getCondition());		
 	}
 	
 	@Test(expected=de.hoogle.weather.ParseException.class)

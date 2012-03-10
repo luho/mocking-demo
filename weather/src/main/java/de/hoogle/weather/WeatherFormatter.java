@@ -1,8 +1,6 @@
 package de.hoogle.weather;
 
-public class WeatherFormatter {
+public interface WeatherFormatter {
 
-	public String makePretty() {
-		return null;
-	}
+	String format();
 }
