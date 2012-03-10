@@ -6,26 +6,63 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import org.junit.Before;
 import org.junit.Test;
 
 public class GoogleWeatherParserTest {
 
 	private GoogleWeatherParser parser;
 	
-	@Before
-	public void setUp() {
-		parser = new GoogleWeatherParser();
-	}
-	
 	@Test
-	public void testParse() throws IOException {
+	public void testDate() throws IOException, ParseException {
+		Date expected = new SimpleDateFormat("yyyy-MM-dd").parse("2012-03-10");
 		String goodInput = readInput("/goodinput.xml");
-		Forecast forecast = parser.parse(goodInput);
-		assertNotNull(forecast);
+		parser = new GoogleWeatherParser(goodInput);
+		
+		Forecast forecast = parser.parse();
+		assertEquals(expected, forecast.getDate());
 	}
 
+	@Test
+	public void testNumberOfDays() throws IOException {
+		String goodInput = readInput("/goodinput.xml");
+		parser = new GoogleWeatherParser(goodInput);
+		
+		Forecast forecast = parser.parse();
+		assertEquals(4, forecast.getDays().size());
+	}
+
+	@Test
+	public void testSaturday() throws IOException {
+		String goodInput = readInput("/goodinput.xml");
+		parser = new GoogleWeatherParser(goodInput);
+		
+		Forecast forecast = parser.parse();
+		assertEquals("Sat", forecast.getDays().get(0).getDayOfWeek());
+		assertEquals(36, forecast.getDays().get(0).getLowTemp());
+		assertEquals(48, forecast.getDays().get(0).getHighTemp());
+		assertEquals("Partly Sunny", forecast.getDays().get(0).getDescription());		
+	}
+	
+	@Test(expected=de.hoogle.weather.ParseException.class)
+	public void testWrongDateFormat() throws IOException {
+		String wrongDateFormat = readInput("/wrongdateinput.xml");
+		parser = new GoogleWeatherParser(wrongDateFormat);
+		
+		parser.parse();		
+	}
+	
+	@Test(expected=de.hoogle.weather.ParseException.class)
+	public void testBadInput() throws IOException {
+		String badInput = readInput("/badInput.xml");
+		parser = new GoogleWeatherParser(badInput);
+		
+		parser.parse();				
+	}
+	
 	private String readInput(String fileName) throws IOException {
 		InputStream in = getClass().getResourceAsStream(fileName);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
