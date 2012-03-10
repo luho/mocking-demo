@@ -20,6 +20,15 @@ public class WeatherApp {
 	}
 
 	public static void main(String[] args) {
-		System.out.println("this is it");
+		GoogleWeatherService service = new GoogleWeatherService();
+		service.setGoogleWeatherClient(new GoogleWeatherClient());
+		service.setGoogleWeatherParser(new GoogleWeatherParser());
+		
+		WeatherApp wapp = new WeatherApp();
+		wapp.setWeatherService(service);
+		wapp.setWeatherFormatter(new ConsoleWeatherFormatter());
+		
+		String forecast = wapp.getForecastForCity("München");
+		System.out.println(forecast);
 	}
 }
