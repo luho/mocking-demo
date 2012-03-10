@@ -1,4 +1,7 @@
-package de.hoogle.weather;
+package de.hoogle.weather.google;
+
+import de.hoogle.weather.Forecast;
+import de.hoogle.weather.WeatherService;
 
 public class GoogleWeatherService implements WeatherService {
 

@@ -1,4 +1,4 @@
-package de.hoogle.weather;
+package de.hoogle.weather.google;
 
 import static org.junit.Assert.*;
 
@@ -11,6 +11,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Test;
+
+import de.hoogle.weather.Forecast;
+import de.hoogle.weather.google.GoogleWeatherParser;
 
 public class GoogleWeatherParserTest {
 

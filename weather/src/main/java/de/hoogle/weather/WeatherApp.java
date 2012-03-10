@@ -1,5 +1,9 @@
 package de.hoogle.weather;
 
+import de.hoogle.weather.google.GoogleWeatherClient;
+import de.hoogle.weather.google.GoogleWeatherParser;
+import de.hoogle.weather.google.GoogleWeatherService;
+
 public class WeatherApp {
 
 	private WeatherService service;
