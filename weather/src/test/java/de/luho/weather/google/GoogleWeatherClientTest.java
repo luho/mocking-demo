@@ -29,8 +29,9 @@ public class GoogleWeatherClientTest {
 	@Test
 	public void testGetForecastWithSpy() {
 		GoogleWeatherClient client = spy(new GoogleWeatherClient());
+		InputStream stream = new ByteArrayInputStream(XML.getBytes());
 		
-		when(client.openStream(URL)).thenReturn(new ByteArrayInputStream(XML.getBytes()));
+		when(client.openStream(URL)).thenReturn(stream);
 		
 		String forecast = client.getForecast("München");
 		

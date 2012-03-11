@@ -29,12 +29,13 @@ public class GoogleWeatherServiceTest {
 	@Before
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
-		when(client.getForecast("München")).thenReturn("<weatherxml></weatherxml>");
-		when(parser.parse("<weatherxml></weatherxml>")).thenReturn(forecast);
 	}
 	
 	@Test
 	public void testGetForecast() {
+		when(client.getForecast("München")).thenReturn("<weatherxml></weatherxml>");
+		when(parser.parse("<weatherxml></weatherxml>")).thenReturn(forecast);
+
 		Forecast forecast = service.getForecastForCity("München");
 		assertNotNull("forecast is null", forecast);
 	}
