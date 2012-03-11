@@ -1,10 +1,15 @@
-package de.hoogle.weather;
+package de.luho.weather;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import de.luho.weather.Forecast;
+import de.luho.weather.WeatherApp;
+import de.luho.weather.WeatherFormatter;
+import de.luho.weather.WeatherService;
 
 import static org.mockito.Mockito.*;
 

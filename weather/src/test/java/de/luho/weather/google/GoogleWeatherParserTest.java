@@ -1,4 +1,4 @@
-package de.hoogle.weather.google;
+package de.luho.weather.google;
 
 import static org.junit.Assert.*;
 
@@ -12,8 +12,8 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import de.hoogle.weather.Forecast;
-import de.hoogle.weather.google.GoogleWeatherParser;
+import de.luho.weather.Forecast;
+import de.luho.weather.google.GoogleWeatherParser;
 
 public class GoogleWeatherParserTest {
 
@@ -50,7 +50,7 @@ public class GoogleWeatherParserTest {
 		assertEquals("Partly Sunny", forecast.getDays().get(0).getCondition());		
 	}
 	
-	@Test(expected=de.hoogle.weather.ParseException.class)
+	@Test(expected=de.luho.weather.ParseException.class)
 	public void testWrongDateFormat() throws IOException {
 		String wrongDateFormat = readInput("/wrongdateinput.xml");
 		parser = new GoogleWeatherParser();
@@ -58,7 +58,7 @@ public class GoogleWeatherParserTest {
 		parser.parse(wrongDateFormat);		
 	}
 	
-	@Test(expected=de.hoogle.weather.ParseException.class)
+	@Test(expected=de.luho.weather.ParseException.class)
 	public void testBadInput() throws IOException {
 		String badInput = readInput("/badInput.xml");
 		parser = new GoogleWeatherParser();

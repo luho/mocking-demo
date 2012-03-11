@@ -1,4 +1,4 @@
-package de.hoogle.weather;
+package de.luho.weather;
 
 import java.text.SimpleDateFormat;
 import java.util.List;

@@ -1,4 +1,4 @@
-package de.hoogle.weather.google;
+package de.luho.weather.google;
 
 import java.io.ByteArrayInputStream;
 import java.io.UnsupportedEncodingException;
@@ -14,9 +14,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
-import de.hoogle.weather.Forecast;
-import de.hoogle.weather.ForecastDay;
-import de.hoogle.weather.ParseException;
+import de.luho.weather.Forecast;
+import de.luho.weather.ForecastDay;
+import de.luho.weather.ParseException;
 
 public class GoogleWeatherParser {
 

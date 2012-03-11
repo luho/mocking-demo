@@ -1,7 +1,7 @@
-package de.hoogle.weather.google;
+package de.luho.weather.google;
 
-import de.hoogle.weather.Forecast;
-import de.hoogle.weather.WeatherService;
+import de.luho.weather.Forecast;
+import de.luho.weather.WeatherService;
 
 public class GoogleWeatherService implements WeatherService {
 

@@ -1,4 +1,4 @@
-package de.hoogle.weather.google;
+package de.luho.weather.google;
 
 import static org.junit.Assert.*;
 
@@ -10,10 +10,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import de.hoogle.weather.Forecast;
-import de.hoogle.weather.google.GoogleWeatherClient;
-import de.hoogle.weather.google.GoogleWeatherParser;
-import de.hoogle.weather.google.GoogleWeatherService;
+import de.luho.weather.Forecast;
+import de.luho.weather.google.GoogleWeatherClient;
+import de.luho.weather.google.GoogleWeatherParser;
+import de.luho.weather.google.GoogleWeatherService;
 import static org.mockito.Mockito.*;
 
 public class GoogleWeatherServiceTest {

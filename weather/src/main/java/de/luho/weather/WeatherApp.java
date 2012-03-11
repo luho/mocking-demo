@@ -1,8 +1,8 @@
-package de.hoogle.weather;
+package de.luho.weather;
 
-import de.hoogle.weather.google.GoogleWeatherClient;
-import de.hoogle.weather.google.GoogleWeatherParser;
-import de.hoogle.weather.google.GoogleWeatherService;
+import de.luho.weather.google.GoogleWeatherClient;
+import de.luho.weather.google.GoogleWeatherParser;
+import de.luho.weather.google.GoogleWeatherService;
 
 public class WeatherApp {
 

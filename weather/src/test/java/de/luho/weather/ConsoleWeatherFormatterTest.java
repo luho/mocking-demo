@@ -1,4 +1,4 @@
-package de.hoogle.weather;
+package de.luho.weather;
 
 import static org.junit.Assert.*;
 
@@ -8,6 +8,10 @@ import java.util.Date;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import de.luho.weather.ConsoleWeatherFormatter;
+import de.luho.weather.Forecast;
+import de.luho.weather.ForecastDay;
 
 public class ConsoleWeatherFormatterTest {
 

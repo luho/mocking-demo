@@ -1,4 +1,4 @@
-package de.hoogle.weather;
+package de.luho.weather;
 
 public interface WeatherFormatter {
 

@@ -1,4 +1,4 @@
-package de.hoogle.weather.google;
+package de.luho.weather.google;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import de.hoogle.weather.SystemException;
+import de.luho.weather.SystemException;
 
 public class GoogleWeatherClient {
 
