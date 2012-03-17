@@ -18,7 +18,7 @@ import static org.mockito.Mockito.*;
 
 public class GoogleWeatherServiceTest {
 
-	private Forecast forecast = new Forecast(new Date());
+	private Forecast expectedForecast = new Forecast(new Date());
 	@Mock
 	private GoogleWeatherClient client;
 	@Mock
@@ -32,11 +32,12 @@ public class GoogleWeatherServiceTest {
 	}
 	
 	@Test
-	public void testGetForecast() {
+	public void testGetForecast() {		
 		when(client.getForecast("München")).thenReturn("<weatherxml></weatherxml>");
-		when(parser.parse("<weatherxml></weatherxml>")).thenReturn(forecast);
+		when(parser.parse("<weatherxml></weatherxml>")).thenReturn(expectedForecast);
 
 		Forecast forecast = service.getForecastForCity("München");
-		assertNotNull("forecast is null", forecast);
+		
+		assertEquals(expectedForecast, forecast);
 	}
 }
