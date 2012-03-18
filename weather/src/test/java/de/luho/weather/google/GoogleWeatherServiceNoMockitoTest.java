@@ -1,8 +1,6 @@
 package de.luho.weather.google;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
-
 import java.util.Date;
 
 import org.junit.Before;
