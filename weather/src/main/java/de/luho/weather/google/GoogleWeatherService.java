@@ -8,7 +8,6 @@ public class GoogleWeatherService implements WeatherService {
 	private GoogleWeatherClient client;
 	private GoogleWeatherParser parser;
 	
-	@Override
 	public Forecast getForecastForCity(String city) {
 		String xml = client.getForecast(city);
 		return parser.parse(xml);

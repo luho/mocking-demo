@@ -7,13 +7,11 @@ import de.luho.weather.WeatherStore;
 
 public class WeatherDatabase implements WeatherStore {
 
-	@Override
 	public void save(Forecast forecast) {
 		// do nothing
 
 	}
 
-	@Override
 	public Forecast find(String city, Date date) {
 		
 		return null;
