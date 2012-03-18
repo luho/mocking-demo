@@ -11,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import de.luho.weather.Forecast;
+import de.luho.weather.ParseException;
 import de.luho.weather.google.GoogleWeatherClient;
 import de.luho.weather.google.GoogleWeatherParser;
 import de.luho.weather.google.GoogleWeatherService;
@@ -39,5 +40,13 @@ public class GoogleWeatherServiceTest {
 		Forecast forecast = service.getForecastForCity("München");
 		
 		assertEquals(expectedForecast, forecast);
+	}
+	
+	@Test(expected=ParseException.class)
+	public void testGetForecastParseException() {		
+		when(client.getForecast("München")).thenReturn("<weatherxml></weatherxml>");
+		when(parser.parse("<weatherxml></weatherxml>")).thenThrow(new ParseException());
+
+		service.getForecastForCity("München");
 	}
 }
