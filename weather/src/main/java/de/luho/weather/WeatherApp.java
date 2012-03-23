@@ -16,7 +16,7 @@ public class WeatherApp {
 	public String getAndStoreForecastForCity(String city) {
 		Forecast forecast = service.getForecastForCity(city);
 		String formatted = formatter.format(forecast);
-		//store.save(forecast);
+		store.save(forecast);
 		return formatted;
 	}
 
